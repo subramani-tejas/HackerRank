@@ -46,11 +46,7 @@ class Result {
     }
     
     private static boolean isInHere(long findThis, int s, int t){                       
-        for (long i=s; i<=t; i++)
-            if(i == findThis)
-                return true;
-        
-        return false; 
+        return (findThis >= s && findThis <= t) ? true : false;
     }
 
 }
