@@ -4,10 +4,9 @@
 import java.util.*;
 import java.io.*;
 
-class Solution{
-	public static void main(String []argh)
-	{
-		Map<String, Integer> phonebook = new HashMap<String, Integer>();
+class Solution {
+    public static void main(String[] argh) {
+        Map<String, Integer> phonebook = new HashMap<String, Integer>();
         Scanner in = new Scanner(System.in);
 
         // number of entries
@@ -27,7 +26,9 @@ class Solution{
             String s = in.nextLine();
             if (phonebook.get(s) != null)
                 System.out.println(s + "=" + phonebook.get(s));
-            else System.out.println("Not found");
+            else
+                System.out.println("Not found");
         }
-	}
+        in.close();
+    }
 }
