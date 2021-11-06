@@ -8,7 +8,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class SimpleArraySum {
 
     static int simpleArraySum(int n, int[] ar) {
         // Complete this function

@@ -10,35 +10,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class Result {
-
-    /*
-     * Complete the 'plusMinus' function below.
-     *
-     * The function accepts INTEGER_ARRAY arr as parameter.
-     */
-
-    public static void plusMinus(List<Integer> arr) {
-        // Write your code here
-        double negativeCount = 0;
-        double positiveCount = 0;
-        double zeroCount = 0;
-        double n = arr.size();
-
-        for (int i = 0; i < n; i++) {
-            if (arr.get(i) > 0) positiveCount++;
-            else if (arr.get(i) < 0) negativeCount++;
-            else zeroCount++;
-        }
-
-        System.out.printf("%.6f \n", positiveCount / n);
-        System.out.printf("%.6f \n", negativeCount / n);
-        System.out.printf("%.6f \n", zeroCount / n);
-    }
-
-}
-
-public class Solution {
+public class PlusMinus {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -56,5 +28,33 @@ public class Solution {
         Result.plusMinus(arr);
 
         bufferedReader.close();
+    }
+
+    static class Result {
+
+        /*
+         * Complete the 'plusMinus' function below.
+         *
+         * The function accepts INTEGER_ARRAY arr as parameter.
+         */
+
+        public static void plusMinus(List<Integer> arr) {
+            // Write your code here
+            double negativeCount = 0;
+            double positiveCount = 0;
+            double zeroCount = 0;
+            double n = arr.size();
+
+            for (int i = 0; i < n; i++) {
+                if (arr.get(i) > 0) positiveCount++;
+                else if (arr.get(i) < 0) negativeCount++;
+                else zeroCount++;
+            }
+
+            System.out.printf("%.6f \n", positiveCount / n);
+            System.out.printf("%.6f \n", negativeCount / n);
+            System.out.printf("%.6f \n", zeroCount / n);
+        }
+
     }
 }

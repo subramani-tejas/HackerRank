@@ -10,39 +10,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class Result {
-
-    /*
-     * Complete the 'compareTriplets' function below.
-     *
-     * The function is expected to return an INTEGER_ARRAY.
-     * The function accepts following parameters:
-     *  1. INTEGER_ARRAY a
-     *  2. INTEGER_ARRAY b
-     */
-
-    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-        // Write your code here
-        int pointsAlice = 0;
-        int pointsBob = 0;
-
-        List<Integer> results = new ArrayList<>();
-
-        for (int i = 0; i < 3; i++) {
-            if (a.get(i) > b.get(i))
-                pointsAlice++;
-            else if (a.get(i) < b.get(i))
-                pointsBob++;
-        }
-        results.add(pointsAlice);
-        results.add(pointsBob);
-
-        return results;
-    }
-
-}
-
-public class Solution {
+public class CompareTheTriplets {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -79,5 +47,36 @@ public class Solution {
 
         bufferedReader.close();
         bufferedWriter.close();
+    }
+    static class Result {
+
+        /*
+         * Complete the 'compareTriplets' function below.
+         *
+         * The function is expected to return an INTEGER_ARRAY.
+         * The function accepts following parameters:
+         *  1. INTEGER_ARRAY a
+         *  2. INTEGER_ARRAY b
+         */
+
+        public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+            // Write your code here
+            int pointsAlice = 0;
+            int pointsBob = 0;
+
+            List<Integer> results = new ArrayList<>();
+
+            for (int i = 0; i < 3; i++) {
+                if (a.get(i) > b.get(i))
+                    pointsAlice++;
+                else if (a.get(i) < b.get(i))
+                    pointsBob++;
+            }
+            results.add(pointsAlice);
+            results.add(pointsBob);
+
+            return results;
+        }
+
     }
 }

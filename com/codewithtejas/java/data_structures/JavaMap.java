@@ -1,10 +1,11 @@
 // https://www.hackerrank.com/challenges/phone-book/problem
 
 //Complete this code or write your own from scratch
+
 import java.util.*;
 import java.io.*;
 
-class Solution {
+class JavaMap {
     public static void main(String[] argh) {
         Map<String, Integer> phonebook = new HashMap<String, Integer>();
         Scanner in = new Scanner(System.in);

@@ -11,47 +11,11 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'countApplesAndOranges' function below.
-     *
-     * The function accepts following parameters:
-     *  1. INTEGER s
-     *  2. INTEGER t
-     *  3. INTEGER a
-     *  4. INTEGER b
-     *  5. INTEGER_ARRAY apples
-     *  6. INTEGER_ARRAY oranges
-     */
-
-    public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
-        // Write your code here        
-        long applesCount = 0;
-        long orangesCount = 0;
-        
-        for (var item: apples)            
-            if (isInHere((a + item), s, t))
-                applesCount++;
-        
-        for (var item: oranges)            
-            if (isInHere((b + item), s, t))
-                orangesCount++;
-                
-        System.out.println(applesCount);
-        System.out.println(orangesCount);
-    }
-    
-    private static boolean isInHere(long findThis, int s, int t){                       
-        return (findThis >= s && findThis <= t) ? true : false;
-    }
-
-}
-
-public class Solution {
+public class AppleAndOrange {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -74,15 +38,52 @@ public class Solution {
         int n = Integer.parseInt(thirdMultipleInput[1]);
 
         List<Integer> apples = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+                .map(Integer::parseInt)
+                .collect(toList());
 
         List<Integer> oranges = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+                .map(Integer::parseInt)
+                .collect(toList());
 
         Result.countApplesAndOranges(s, t, a, b, apples, oranges);
 
         bufferedReader.close();
+    }
+
+    static class Result {
+
+        /*
+         * Complete the 'countApplesAndOranges' function below.
+         *
+         * The function accepts following parameters:
+         *  1. INTEGER s
+         *  2. INTEGER t
+         *  3. INTEGER a
+         *  4. INTEGER b
+         *  5. INTEGER_ARRAY apples
+         *  6. INTEGER_ARRAY oranges
+         */
+
+        public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+            // Write your code here
+            long applesCount = 0;
+            long orangesCount = 0;
+
+            for (var item : apples)
+                if (isInHere((a + item), s, t))
+                    applesCount++;
+
+            for (var item : oranges)
+                if (isInHere((b + item), s, t))
+                    orangesCount++;
+
+            System.out.println(applesCount);
+            System.out.println(orangesCount);
+        }
+
+        private static boolean isInHere(long findThis, int s, int t) {
+            return (findThis >= s && findThis <= t) ? true : false;
+        }
+
     }
 }

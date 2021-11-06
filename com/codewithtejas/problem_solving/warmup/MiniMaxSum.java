@@ -11,44 +11,45 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'miniMaxSum' function below.
-     *
-     * The function accepts INTEGER_ARRAY arr as parameter.
-     */
-
-    public static void miniMaxSum(List<Integer> arr) {
-        // Write your code here
-        // min and max in array
-        long minArray = arr.get(0);
-        long maxArray = arr.get(0);
-        long totalArray = 0;
-
-        for (var item : arr) {
-            totalArray += item;
-            if (minArray > item) minArray = item;
-            if (maxArray < item) maxArray = item;
-        }
-        System.out.println((totalArray-maxArray) + " " + (totalArray-minArray));
-    }
-
-}
-
-public class Solution {
+public class MiniMaxSum {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+                .map(Integer::parseInt)
+                .collect(toList());
 
         Result.miniMaxSum(arr);
 
         bufferedReader.close();
+    }
+
+    static class Result {
+
+        /*
+         * Complete the 'miniMaxSum' function below.
+         *
+         * The function accepts INTEGER_ARRAY arr as parameter.
+         */
+
+        public static void miniMaxSum(List<Integer> arr) {
+            // Write your code here
+            // min and max in array
+            long minArray = arr.get(0);
+            long maxArray = arr.get(0);
+            long totalArray = 0;
+
+            for (var item : arr) {
+                totalArray += item;
+                if (minArray > item) minArray = item;
+                if (maxArray < item) maxArray = item;
+            }
+            System.out.println((totalArray - maxArray) + " " + (totalArray - minArray));
+        }
+
     }
 }

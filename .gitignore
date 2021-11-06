@@ -1,1 +1,7 @@
 .vscode/settings.json
+
+.idea
+.iml
+com/codewithtejas/codewithtejas1.iml
+com/codewithtejas/java/codewithtejas.iml
+com/codewithtejas/problem_solving/problem_solving.iml

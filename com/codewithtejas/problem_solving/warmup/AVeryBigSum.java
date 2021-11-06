@@ -10,24 +10,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class Result {
-
-    /*
-     * Complete the 'aVeryBigSum' function below.
-     *
-     * The function is expected to return a LONG_INTEGER.
-     * The function accepts LONG_INTEGER_ARRAY ar as parameter.
-     */
-
-    public static long aVeryBigSum(List<Long> ar) {
-        // Write your code here
-        long sum = 0;
-        for (Long aLong : ar) sum += aLong;
-        return sum;
-    }
-}
-
-public class Solution {
+public class AVeryBigSum {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -50,5 +33,22 @@ public class Solution {
 
         bufferedReader.close();
         bufferedWriter.close();
+    }
+
+    static class Result {
+
+        /*
+         * Complete the 'aVeryBigSum' function below.
+         *
+         * The function is expected to return a LONG_INTEGER.
+         * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+         */
+
+        public static long aVeryBigSum(List<Long> ar) {
+            // Write your code here
+            long sum = 0;
+            for (Long aLong : ar) sum += aLong;
+            return sum;
+        }
     }
 }

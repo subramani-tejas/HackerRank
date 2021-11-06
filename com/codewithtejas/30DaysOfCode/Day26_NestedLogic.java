@@ -5,11 +5,10 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
-
+public class Day26_NestedLogic {
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        
+
         Scanner scanner = new Scanner(System.in);
 
         // date returned
@@ -24,9 +23,9 @@ public class Solution {
 
         scanner.close();
         int fine = 0;
-        
-        if (yearReturned < yearDue) { }
-        else{
+
+        if (yearReturned < yearDue) {
+        } else {
             if (yearReturned > yearDue) fine = 10000;
             else if (monthReturned > monthDue)
                 fine = 500 * (monthReturned - monthDue);

@@ -15,24 +15,7 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'staircase' function below.
-     *
-     * The function accepts INTEGER n as parameter.
-     */
-
-    public static void staircase(int n) {
-        // Write your code here
-        for (int i = 0; i < n; i++) {
-            String res = " ".repeat(n - i - 1) + "#".repeat(i + 1);
-            System.out.println(res);
-        }
-    }
-}
-
-public class Solution {
+public class Staircase {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -41,5 +24,22 @@ public class Solution {
         Result.staircase(n);
 
         bufferedReader.close();
+    }
+
+    static class Result {
+
+        /*
+         * Complete the 'staircase' function below.
+         *
+         * The function accepts INTEGER n as parameter.
+         */
+
+        public static void staircase(int n) {
+            // Write your code here
+            for (int i = 0; i < n; i++) {
+                String res = " ".repeat(n - i - 1) + "#".repeat(i + 1);
+                System.out.println(res);
+            }
+        }
     }
 }

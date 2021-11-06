@@ -10,39 +10,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class Result {
-
-    /*
-     * Complete the 'birthdayCakeCandles' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts INTEGER_ARRAY candles as parameter.
-     */
-
-    public static int birthdayCakeCandles(List<Integer> candles) {
-        // Write your code here
-        int max = findMax(candles);
-        int count = 0;
-    
-        for (int item: candles)
-            if (item == max)
-                count++;
-        
-        return count;
-    }
-    
-    private static int findMax(List<Integer> arr) {
-        int max = arr.get(0);
-        
-        for (int i=0; i<arr.size(); i++)
-            if(arr.get(i) > max)
-                max = arr.get(i);
-        
-        return max;
-    }
-}
-
-public class Solution {
+public class BirthdayCakeCandles {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -65,5 +33,36 @@ public class Solution {
 
         bufferedReader.close();
         bufferedWriter.close();
+    }
+    static class Result {
+
+        /*
+         * Complete the 'birthdayCakeCandles' function below.
+         *
+         * The function is expected to return an INTEGER.
+         * The function accepts INTEGER_ARRAY candles as parameter.
+         */
+
+        public static int birthdayCakeCandles(List<Integer> candles) {
+            // Write your code here
+            int max = findMax(candles);
+            int count = 0;
+
+            for (int item: candles)
+                if (item == max)
+                    count++;
+
+            return count;
+        }
+
+        private static int findMax(List<Integer> arr) {
+            int max = arr.get(0);
+
+            for (int i=0; i<arr.size(); i++)
+                if(arr.get(i) > max)
+                    max = arr.get(i);
+
+            return max;
+        }
     }
 }

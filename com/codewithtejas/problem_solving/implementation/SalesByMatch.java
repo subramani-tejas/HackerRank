@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class SalesByMatch {
 
     // Complete the sockMerchant function below.
     static int sockMerchant(int n, int[] ar) {
